@@ -10,7 +10,7 @@ export default async function Home() {
   const response: Response = await data.json()
 
   return (
-    <main className="w-full max-w-[1200px] mx-auto my-0">
+    <main className="w-full max-w-[1200px] py-4 px-2 mx-auto my-0">
       <div className="flex flex-col gap-14">
         <Sorting />
         <List data={response} />

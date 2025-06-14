@@ -5,6 +5,7 @@ import { Autoplay, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
+import Image from 'next/image'
 
 interface IPhotoSwiper {
   images: string[]
@@ -27,9 +28,10 @@ export default function PhotoSwiper({ images }: IPhotoSwiper) {
         slidesPerView={1}
         className="h-full"
       >
-        {images.map((src) => (
+        {images.map((src, idx) => (
           <SwiperSlide key={src}>
             <img
+              alt={'photo-' + idx}
               src={src}
               width={0}
               height={0}

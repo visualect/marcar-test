@@ -54,20 +54,20 @@ export default function CarCard({ data }: ICarCard) {
             </p>
           </div>
         </div>
-        <div className="flex flex-row justify-between gap-2 items-center">
-          <div className="flex gap-2">
+        <div className="flex flex-col md:flex-row justify-between gap-2 items-center">
+          <div className="flex gap-2 w-full">
             <Button
-              extraClass="aspect-square"
+              extraClass="aspect-square w-full md:w-fit"
               design="gray"
               icon={<CiHeart size={18} />}
             />
             <Button
-              extraClass="aspect-square"
+              extraClass="aspect-square w-full md:w-fit"
               design="gray"
               icon={<RiScalesLine size={18} />}
             />
           </div>
-          <Button label="Купить" />
+          <Button label="Купить" extraClass="w-full md:w-fit" />
         </div>
       </div>
     </li>

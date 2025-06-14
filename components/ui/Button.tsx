@@ -28,7 +28,7 @@ export default function Button({
   return (
     <button
       {...props}
-      className={`flex justify-center items-center text-center gap-[5px] w-fit px-4 py-1 xs:h-[36px] sm:h-[40px] rounded-[10px] text-[15px] leading-[16px] ${designClasses} font-semibold transition-all ease-out cursor-pointer ${extraClass}`}
+      className={`flex justify-center items-center text-center gap-[5px] w-fit px-4 py-1 h-[40px] rounded-[10px] text-[15px] leading-[16px] ${designClasses} font-semibold transition-all ease-out cursor-pointer ${extraClass}`}
     >
       {icon && <div className="shrink-0">{icon}</div>}
       {label && <p>{label}</p>}
