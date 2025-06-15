@@ -3,7 +3,6 @@ import { Montserrat } from 'next/font/google'
 import './globals.css'
 
 const montserrat = Montserrat({
-  variable: '--font-geist-sans',
   subsets: ['latin', 'cyrillic'],
 })
 
@@ -19,7 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} antialiased`}>{children}</body>
+      <body
+        suppressHydrationWarning
+        className={`${montserrat.className} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
