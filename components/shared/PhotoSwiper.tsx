@@ -32,7 +32,7 @@ export default function PhotoSwiper({ images, bookingAllowed }: IPhotoSwiper) {
           <SwiperSlide key={src}>
             <img
               loading="lazy"
-              alt={'photo-' + idx}
+              alt={'image-' + (idx + 1)}
               src={src}
               width={0}
               height={0}
