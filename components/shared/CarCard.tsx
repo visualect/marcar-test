@@ -18,11 +18,19 @@ interface ICarCard {
 export default function CarCard({ data }: ICarCard) {
   return (
     <li className="col-span-1 flex flex-col gap-2 p-5 rounded-3xl bg-transparent hover:shadow-[0_8px_20px_0_rgba(0,0,0,0.1)] transition-shadow ease-out overflow-hidden">
-      <PhotoSwiper images={data.images.image} />
+      <PhotoSwiper
+        images={data.images.image}
+        bookingAllowed={data.booking_allowed}
+      />
       <div className="flex flex-col">
         <h3 className="font-bold text-lg cursor-pointer">{data.mark_id}</h3>
-        <div className="flex gap-1 pb-2">
+        <div className="flex items-center gap-2 pb-2">
           <p className="font-semibold">{formatNumber(data.price, '₽')}</p>
+          {data.credit_discount && (
+            <p className="text-xs font-semibold text-gray-500">
+              от {formatNumber(data.credit_discount, '₽')}/мес
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-2 pb-4 text-xs text-gray-900">
           <p className="flex gap-1 items-center">
