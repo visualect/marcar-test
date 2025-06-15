@@ -15,7 +15,7 @@ export default async function Home(props: {
   const currentPage = Number(searchParams?.page) || 1
 
   let url =
-    process.env.NEXT_PUBLIC_BACKEND_URL + `/cars?_limit=12?_page=${currentPage}`
+    process.env.NEXT_PUBLIC_BACKEND_URL + `/cars?_limit=12&_page=${currentPage}`
 
   if (order) {
     url += `&_sort=price&_order=${order}`
@@ -31,7 +31,7 @@ export default async function Home(props: {
         <Suspense key={order + currentPage}>
           <List data={response} />
         </Suspense>
-        <Pagination />
+        <Pagination meta={response.meta} />
       </div>
     </main>
   )
