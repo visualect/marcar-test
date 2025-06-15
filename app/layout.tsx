@@ -1,20 +1,20 @@
-import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from 'next';
+import { Montserrat } from 'next/font/google';
+import './globals.css';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
-})
+});
 
 export const metadata: Metadata = {
   title: 'Маркар - тестовое задание',
   description: 'Тестовое задание',
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -25,5 +25,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }

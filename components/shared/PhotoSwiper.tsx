@@ -1,19 +1,19 @@
-'use client'
+'use client';
 
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/autoplay'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 interface IPhotoSwiper {
-  images: string[]
-  bookingAllowed: boolean
+  images: string[];
+  bookingAllowed: boolean;
 }
 
 export default function PhotoSwiper({ images, bookingAllowed }: IPhotoSwiper) {
   return (
-    <div className="relative w-full h-auto aspect-retro rounded-2xl overflow-hidden">
+    <div className="aspect-retro relative h-auto w-full overflow-hidden rounded-2xl">
       <Swiper
         modules={[Autoplay, Pagination]}
         loop
@@ -37,16 +37,16 @@ export default function PhotoSwiper({ images, bookingAllowed }: IPhotoSwiper) {
               width={0}
               height={0}
               sizes="100%"
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
           </SwiperSlide>
         ))}
       </Swiper>
       {bookingAllowed && (
-        <div className="absolute top-2 right-2 rounded-[10px] px-2 py-1 text-xs font-semibold text-white bg-emerald-500 z-10">
+        <div className="absolute top-2 right-2 z-10 rounded-[10px] bg-emerald-500 px-2 py-1 text-xs font-semibold text-white">
           Можно забронировать
         </div>
       )}
     </div>
-  )
+  );
 }
